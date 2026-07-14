@@ -8,11 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/animations.css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
     <style>
-        /* MAVJUD DIZAYNGA MOS CHIROYLI POPUP (TOAST) USLUBI */
         .toast-notification {
             position: fixed;
             bottom: -100px;
@@ -48,143 +47,6 @@
 </head>
 <body>
 
-    <div id="loader" class="loader-container">
-        <div class="loader-content">
-            <div class="loader-logo">DOSTECH</div>
-            <div class="loader-bar"><div class="progress"></div></div>
-        </div>
-    </div>
-
-    <div class="cursor-glow"></div>
-
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="scrollBar"></div>
-    </div>
-
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">DOSTECH<span>.</span></a>
-            <nav class="nav-menu">
-                <a href="#hero" class="nav-link active">Asosiy</a>
-                <a href="#services" class="nav-link">Xizmatlar</a>
-                <a href="#about" class="nav-link">Kompaniya</a>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#pricing" class="nav-link">Narxlar</a>
-                <a href="#contact" class="nav-link nav-btn">Bog'lanish</a>
-            </nav>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </header>
-
-    <section id="hero" class="hero-section">
-        <div class="animated-bg"></div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="badge-premium"><span>Premium Sifat</span></div>
-                <h1>Biz Kelajak <br><span class="gradient-text typing-text"></span></h1>
-                <p class="hero-desc">DOSTECH — biznesingizni raqamlashtirish uchun yuqori texnologik va zamonaviy IT yechimlarni taqdim etadi. Telegram botlar, WebApp va mukammal ekotizimlar.</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Loyiha Boshlash <i class="fas fa-arrow-right"></i></a>
-                    <a href="#portfolio" class="btn btn-secondary">Portfolioni Ko'rish</a>
-                </div>
-            </div>
-            <div class="hero-illustration">
-                <div class="glass-card-illustration">
-                    <div class="code-header">
-                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    </div>
-                    <pre><code><span class="keyword">const</span> company = <span class="string">'DOSTECH'</span>;
-<span class="keyword">function</span> <span class="function">buildFuture</span>() {
-  <span class="keyword">return</span> <span class="string">'Modern IT Solutions'</span>;
-}</code></pre>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services-section section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Bizning Xizmatlar</h2>
-                <p class="section-subtitle">Sizning g'oyalaringizni mukammal kod bilan haqiqatga aylantiramiz.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card glass-effect scroll-reveal">
-                    <div class="card-icon"><i class="fab fa-telegram"></i></div>
-                    <h3>Telegram Botlar</h3>
-                    <p>Avtomatlashtirilgan, barqaror va yuqori yuklamalarga chidamli Python (Aiogram) botlar.</p>
-                </div>
-                <div class="service-card glass-effect scroll-reveal">
-                    <div class="card-icon"><i class="fas fa-cubes"></i></div>
-                    <h3>Telegram Mini Apps</h3>
-                    <p>Telegram ichida ochiluvchi to'liq veb-ilovalar (WebApps) va interaktiv interfeyslar.</p>
-                </div>
-                <div class="service-card glass-effect scroll-reveal">
-                    <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <h3>Landing Pages</h3>
-                    <p>Konversiyasi yuqori, Apple va Stripe uslubidagi premium dizaynga ega bir sahifali saytlar.</p>
-                </div>
-                <div class="service-card glass-effect scroll-reveal">
-                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Kiberxavfsizlik Audit</h3>
-                    <p>Tizimlaringiz, bot va veb-saytlaringiz xavfsizligini tekshirish va zaifliklarni yopish.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats-section section-padding">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h3 class="counter" data-target="50">0</h3>
-                <p>Yakunlangan Loyihalar</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="30">0</h3>
-                <p>Mamnun Mijozlar</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="5">0</h3>
-                <p>Yillik Tajriba</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="portfolio-section section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Saralangan Loyihalar</h2>
-                <div class="portfolio-filters">
-                    <button class="filter-btn active" data-filter="all">Hammasi</button>
-                    <button class="filter-btn" data-filter="bots">Botlar</button>
-                    <button class="filter-btn" data-filter="web">WebApps / Saytlar</button>
-                </div>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item glass-effect" data-category="bots">
-                    <div class="portfolio-img"><div class="img-placeholder">Fast Designers Bot</div></div>
-                    <div class="portfolio-info">
-                        <span class="category">Telegram Bot</span>
-                        <h4>Avtomatlashtirilgan Dizayn boti</h4>
-                        <p>Buyurtmalarni avtomatik qabul qiluvchi aqlli CRM tizimli bot.</p>
-                    </div>
-                </div>
-                <div class="portfolio-item glass-effect" data-category="web">
-                    <div class="portfolio-img"><div class="img-placeholder">Crypto Mini App</div></div>
-                    <div class="portfolio-info">
-                        <span class="category">Telegram WebApp</span>
-                        <h4>RFL BLAST Mini App</h4>
-                        <p>Minimalist dizaynga va silliq animatsiyalarga ega Telegram ichidagi o'yin/ilova.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="contact-section section-padding">
         <div class="container contact-grid">
             <div class="contact-info">
@@ -210,17 +72,9 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>&copy; 2026 DOSTECH. "Modern IT Solutions". Barcha huquqlar himoyalangan.</p>
-        </div>
-    </footer>
-
     <div id="toast" class="toast-notification"></div>
 
-    <button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
-
-    <script src="js/script.js"></script>
+    <script src="/static/js/script.js"></script>
     
     <script>
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -229,12 +83,10 @@
             const submitBtn = document.getElementById('submitBtn');
             const toast = document.getElementById('toast');
             
-            // Tugmani bloklash va yuklanish animatsiyasi
             submitBtn.disabled = true;
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuborilmoqda...';
 
-            // Ma'lumotlarni yig'ish
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
@@ -244,23 +96,16 @@
             function showToast(text, isSuccess) {
                 toast.className = 'toast-notification show ' + (isSuccess ? 'toast-success' : 'toast-error');
                 toast.innerHTML = (isSuccess ? '<i class="fas fa-check-circle"></i> ' : '<i class="fas fa-exclamation-circle"></i> ') + text;
-                
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 4000);
+                setTimeout(() => { toast.classList.remove('show'); }, 4000);
             }
 
             try {
                 const response = await fetch('/api/contact', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
                 });
-
                 const result = await response.json();
-
                 if (response.ok && result.success) {
                     showToast('✅ Xabaringiz muvaffaqiyatli yuborildi.', true);
                     document.getElementById('contactForm').reset();
@@ -270,7 +115,6 @@
             } catch (error) {
                 showToast('❌ Xabar yuborilmadi.', false);
             } finally {
-                // Tugmani asliga qaytarish
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalText;
             }
