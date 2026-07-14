@@ -6,20 +6,21 @@ from dotenv import load_dotenv
 # .env faylini yuklaymiz
 load_dotenv()
 
-app = Flask(__name__, static_folder='', static_url_path='')
+# static_folder-ni bo'sh qoldiramiz va static_url_path-ni ildizga yo'naltiramiz
+app = Flask(__name__, static_folder=None)
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
 @app.route('/')
 def index():
-    # index.html faylini loyiha ildizidan (root) to'g'ridan-to'g'ri qaytaradi
+    # index.html ni joriy papkadan o'qib qaytaradi
     return send_from_directory('.', 'index.html')
 
-@app.route('/<path:path>')
-def send_static(path):
-    # CSS, JS, rasmlar va boshqa static fayllarni o'z joyidan uzatadi
-    return send_from_directory('.', path)
+@app.route('/<path:filename>')
+def serve_static_files(filename):
+    # css/, js/ kabi istalgan papkadagi fayllarni to'g'ri yetkazib beradi
+    return send_from_directory('.', filename)
 
 @app.route('/api/contact', methods=['POST'])
 def contact():
@@ -32,7 +33,6 @@ def contact():
     if not name or not email or not message:
         return jsonify({"success": False, "message": "Barcha maydonlarni to'ldiring!"}), 400
 
-    # Telegram xabari formati
     telegram_message = (
         "━━━━━━━━━━━━━━━━━━\n"
         "📩 YANGI ARIZA\n\n"
@@ -43,7 +43,6 @@ def contact():
         "━━━━━━━━━━━━━━━━━━"
     )
 
-    # Telegram Bot API so'rovi
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
         "chat_id": CHAT_ID,
@@ -63,5 +62,4 @@ def contact():
         return jsonify({"success": False, "message": str(e)}), 500
 
 if __name__ == '__main__':
-    # Mahalliy sinov uchun port 5000
     app.run(debug=True, port=5000)
